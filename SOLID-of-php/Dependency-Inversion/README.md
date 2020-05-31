@@ -1,0 +1,1 @@
+This states classes should depend on abstractions, not on concretions. Not only high level Classes but low level Classes also depend on the abstractions in order to decouple the code.
