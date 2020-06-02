@@ -1,26 +1,41 @@
-abstract class MusicalInstrument
+<?php 
+
+class VideoPlayer {
+    public function play($file)
     {
-        public abstract void PlayANote();
+        // play the video
     }
-class Piano : MusicalInstrument
+}
+
+class AviVideoPlayer extends VideoPlayer {
+    public function play($file)
     {
-        public override void PlayANote()
+        if(pathinfo($file, PATHINFO_EXTENSION) !== 'avi')
         {
-            PressKey();
-        }
-        private void PressKey()
-        {
-            //Press a piano key.
-        }
-    }
-class Saxophone : MusicalInstrument
-    {
-        public override void PlayANote()
-        {
-            Blow();
-        }
-        private void Blow()
-        {
-            //Blow air into the instrument.
+            throw new Exception;  // violateds the LSP
         }
     }
+}
+
+//------------------------------------------------
+
+interface LessonRepositoryInterface {
+
+    public function getAll();
+}
+
+class FileLessonRepository implements LessonRepositoryInterface {
+
+    public function getAll()
+    {
+        return [];  // it is returning an array
+    }
+}
+
+class DbLessonRepository implements LessonRepositoryInterface {
+
+    public function getAll()
+    {
+        return lesson::all(); // violates the LSP  it is returning a collection
+    }
+}
