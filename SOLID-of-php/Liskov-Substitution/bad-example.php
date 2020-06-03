@@ -3,7 +3,7 @@
 class VideoPlayer {
     public function play($file)
     {
-        // play the video
+        return 'playing the video';
     }
 }
 
@@ -17,19 +17,12 @@ class AviVideoPlayer extends VideoPlayer {
     }
 }
 
-//------------------------------------------------
+
+// ---------------------------------------------------------------------
 
 interface LessonRepositoryInterface {
 
     public function getAll();
-}
-
-class FileLessonRepository implements LessonRepositoryInterface {
-
-    public function getAll()
-    {
-        return [];  // it is returning an array
-    }
 }
 
 class DbLessonRepository implements LessonRepositoryInterface {
@@ -39,3 +32,7 @@ class DbLessonRepository implements LessonRepositoryInterface {
         return lesson::all(); // violates the LSP  it is returning a collection
     }
 }
+
+
+$db = new DbLessonRepository;
+var_dump($db->getall());

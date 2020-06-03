@@ -1,3 +1,5 @@
+<?php
+
 interface Codeable
 {
     public function code();
@@ -31,3 +33,35 @@ class ProjectManagement
         $member->code();
     }
 }
+
+class Cleaner
+{
+    public function cleaning()
+    {
+        return 'cleaning the floor';
+    }
+}
+
+class Clerk 
+{
+    public function clerking()
+    {
+        return 'serving the food';
+    }
+}
+
+
+
+$tester = new Tester;
+var_dump($tester->test());
+
+
+$programmer = new Programmer;
+var_dump($programmer->test());
+
+$programmer = new Programmer;
+var_dump($programmer->code());
+
+
+$cleaner = new Cleaner;
+var_dump($cleaner->cleaning());
