@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 class Rectangle {
   
@@ -43,11 +43,9 @@ class AreaCalculator {
     }
 }
 
+$rec = new Rectangle(3,5);
+$sqr = new Square(3);
 
-$shapes = new Rectangle(2,5);
-$area = new AreaCalculator($shapes);
-var_dump($area);
+$cal = new AreaCalculator([$rec, $sqr]);
 
-$square = new Square(3);
-$area = new AreaCalculator($square);
-var_dump($area);
+var_dump($cal->sum());
