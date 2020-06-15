@@ -1,8 +1,8 @@
 <?php
 
-interface EBook{
-    function read();
-}
+// interface EBook{
+//     function read();
+// }
 // Low Level Class 1
 class PDFBook {
  
@@ -12,7 +12,7 @@ class PDFBook {
 }
 
 // Low Level Class 2
-class EpubBook implements EBook {
+class EpubBook {
 
     function read() {
         return "reading a epub book.";
@@ -20,7 +20,7 @@ class EpubBook implements EBook {
 }
 
 // High Level Class
-class EBookReader {
+class EBookReader extends  EpubBook{
  
     private $book;
  
