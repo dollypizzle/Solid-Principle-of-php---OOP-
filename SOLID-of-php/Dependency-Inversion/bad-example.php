@@ -20,7 +20,7 @@ class EpubBook {
 }
 
 // High Level Class
-class EBookReader extends  EpubBook{
+class EBookReader {
  
     private $book;
  
