@@ -1,59 +1,49 @@
+
 <?php
 
-interface Mailer
-{
-    public function send();
+interface EBook{
+    function read();
 }
 
-class SmtpMailer implements Mailer
-{
-    public function send()
-    {
-        return 'welcome';
+// Low Level Class 1
+class PDFBook implements EBook{
+
+    function read() {
+        return "reading a pdf book.";
     }
 }
 
-class SendGridMailer implements Mailer
-{
-    public function send()
-    {
-        return 'good';
-    }
-}
+// Low Level Class 2
+class EpubBook implements EBook {
 
-class SendWelcomeMessage
-{
-    private $mailer;
-
-    public function __construct(Mailer $mailer)
-    {
-        $this->mailer = $mailer;
+    function read() {
+        return "reading a epub book.";
     }
 }
 
 
-// --------------------------------------------------------
+// High Level Class
+class EBookReader {
 
-interface DbConnectionInterface {
-    public function connect();
-} 
- 
-class MySqlConnection implements DbConnectionInterface {
-    public function connect() 
-    {
-        return 'connecting...';
+    private $book;
+
+    function __construct(EBook $book) {
+        $this->book = $book;
     }
-}
- 
-class PageLoader {
-    private $dbConnection;
-    public function __construct(DbConnectionInterface $dbConnection) {
-        $this->dbConnection = $dbConnection;
+
+    function read() {
+        return $this->book->read();
     }
+
 }
 
-$mysql = new MySqlConnection;
-var_dump($mysql->connect());
+$epub = new EpubBook();
+$pdf = new PDFBook();
+$book = new PDFBook();
+$read = new EBookReader($book);
 
-$page = new PageLoader($mysql);
-var_dump($page);
+var_dump($epub->read());
+var_dump($pdf->read());
+var_dump($read->read());
+
+
