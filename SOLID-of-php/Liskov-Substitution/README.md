@@ -1,0 +1,1 @@
+It states that any implementation of an abstraction (interface) should be substitutable in any place that the abstraction is accepted. Basically it takes care that while coding using interfaces in our code, we not only have a contract of input that the interface receives but also the output returned by different Classes implementing that interface; they should be of same type.
