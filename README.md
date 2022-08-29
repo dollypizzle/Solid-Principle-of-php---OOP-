@@ -1,4 +1,4 @@
-# Solid-Principle-of-php-&-OOP-
+# Solid Principle of Php & Object Oriented Programming
 
 This post is to provide an easy to understand idea about the implementation of one of the most “talked about” principles of Object Oriented Programming - SOLID principles. As a programmer, there might come a time when we are so consumed in finishing the task at hand that we forget the world around us. And in the very same world, somewhere lost are the programming principles that we read about and planned to use next time. So let’s try to look at the SOLID principles in one of the simplest way possible so that we can practice them while coding.
 So let’s dig in to the SOLID principles at a glance.
