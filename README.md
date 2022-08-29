@@ -17,7 +17,7 @@ Object Oriented programming (OOP) is a programming paradigm that includes or rel
 .
 The four principles of object-oriented programming are 
   
-  encapsulation, 
-  abstraction, 
-  inheritance, 
-  polymorphism.
+  `encapsulation, 
+  `abstraction, 
+  `inheritance, 
+  `polymorphism.
