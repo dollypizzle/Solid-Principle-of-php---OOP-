@@ -16,7 +16,8 @@ Dependency Inversion: Depend on abstractions, not on concretions. Not only high 
 Object Oriented programming (OOP) is a programming paradigm that includes or relies on the concept of classes and objects. It is used to structure a software program into simple, reusable pieces of code blueprints (usually called classes) which are used to create individual instances of objects. Because OOP is a programming paradigm, there are many object-oriented programming languages
 .
 The four principles of object-oriented programming are 
-encapsulation, 
-abstraction, 
-inheritance, 
-polymorphism.
+  
+  encapsulation, 
+  abstraction, 
+  inheritance, 
+  polymorphism.
