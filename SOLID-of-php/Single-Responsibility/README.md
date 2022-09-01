@@ -1,0 +1,3 @@
+This states that a class should have a single responsibility, but more than that, a class should only have one reason to change.
+
+This class knows about a title property and allows this title property to be retrieved by a get() method. We can also use a method in this class called formatJson() to return the page as a JSON string. This might seem like a good idea as the class is responsible for its own formatting.

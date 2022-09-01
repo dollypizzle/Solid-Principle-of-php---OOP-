@@ -51,3 +51,9 @@ class PageLoader {
         $this->dbConnection = $dbConnection;
     }
 }
+
+$mysql = new MySqlConnection;
+var_dump($mysql->connect());
+
+$page = new PageLoader($mysql);
+var_dump($page);

@@ -30,7 +30,7 @@ class ProjectManagement
 {
     public function processCode(Codeable $member)
     {
-        $member->code();
+        return $member->code();
     }
 }
 
@@ -59,8 +59,9 @@ var_dump($tester->test());
 $programmer = new Programmer;
 var_dump($programmer->test());
 
-$programmer = new Programmer;
-var_dump($programmer->code());
+
+$project = new ProjectManagement();
+var_dump($project->processCode($programmer));
 
 
 $cleaner = new Cleaner;

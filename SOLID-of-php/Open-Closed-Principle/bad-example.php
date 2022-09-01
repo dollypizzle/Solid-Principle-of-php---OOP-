@@ -42,3 +42,4 @@ class AreaCalculator2
         return $area;
     }
 }
+

@@ -1,19 +1,27 @@
 <?php
 
-interface Shape
+abstract class Shape
 {
-    /**
-     * Calculate the area of the shape.
-     *
-     * @return mixed
-     */
-    public function getArea();
+    // protected $area;
+
+    // public function __construct($area)
+    // {
+    //     $this->area = $area;
+    // }
+
+    // public function getArea()
+    // {
+    //     return $this->area;
+    // }
+
+    abstract protected function getArea();
+
 }
 
-class Rectangle implements Shape
+class Rectangle extends Shape
 {
-    protected $width = 3; 
-    protected $height = 4;
+    public $width;  
+    public $height;
 
     public function getArea()
     {
@@ -21,7 +29,7 @@ class Rectangle implements Shape
     }
 }
 
-class Circle implements Shape
+class Circle extends Shape
 {
     protected $radius = 5;
 
@@ -31,7 +39,7 @@ class Circle implements Shape
     }
 }
 
-class Triangle implements Shape{
+class Triangle extends Shape{
     protected $base = 4;
 
     protected $height = 7;
@@ -44,11 +52,11 @@ class Triangle implements Shape{
 
 
 $circle = new Circle;
-echo $circle->getArea();
+var_dump($circle->getArea());
 
-$rectangle = new Rectangle;
-echo $rectangle->getArea();
+$rectangle = new Rectangle();
+echo($rectangle->getArea());
 
 $triangle = new Triangle;
-echo $triangle->getArea();
+var_dump($triangle->getArea());
 
