@@ -1,7 +1,7 @@
 <?php
 
 interface Shape {
-    public function getArea();
+    public function area();
 }
 
 class Rectangle implements Shape {
@@ -14,21 +14,8 @@ class Rectangle implements Shape {
         $this->height = $height;
     }
     
-    public function getArea() {
+    public function area() {
         return $this->width * $this->height;
-    }
-}
-
-class Circle implements Shape {
-  
-    private $radius;
-    
-    public function __construct($radius) {
-        $this->radius = $radius;
-    }
-    
-    public function getArea() {
-        return pow($this->radius, 2) * pi();
     }
 }
 
@@ -40,7 +27,7 @@ class Square implements Shape {
         $this->length = $length;
     }
     
-    public function getArea() {
+    public function area() {
         return pow($this->length, 2);
     }
 }
@@ -57,20 +44,33 @@ class AreaCalculator {
         $area = [];
         
         foreach($this->shapes as $shape) {
-            $area[] = $shape->getArea();
+            $area[] = $shape->area();
         }
     
         return array_sum($area);
     }
 }
 
+// if we want to calculate the area of 
 
-$circle = new Circle(2);
-var_dump($circle->getArea());
+class Circle implements Shape {
+  
+    private $radius;
+    
+    public function __construct($radius) {
+        $this->radius = $radius;
+    }
+    
+    public function area() {
+        return pow($this->radius, 2) * pi();
+    }
+}
 
-$rectangle = new Rectangle(2,3);
-var_dump($rectangle->getArea());
+$rec = new Rectangle(3,5);
+$sqr = new Square(3);
+$cir = new Circle(3);
 
-$square = new Square(7);
-var_dump($square->getArea());
 
+$cal = new AreaCalculator([$rec, $sqr, $cir]);
+
+var_dump($cal->sum());
